@@ -1,5 +1,6 @@
 ﻿body {
     padding-bottom: 20px;
+    margin-top: 45px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -32,7 +33,7 @@ textarea {
 }
 
 body {
-  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  /*font: normal 16px/1.5 "Helvetica Neue", sans-serif;*/
   background: #456990;
   color: #fff;
   overflow-x: hidden;
@@ -191,3 +192,4 @@ time {
 
 
 }
+/*CREATE EVENT PAGE*/
