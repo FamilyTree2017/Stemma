@@ -1,5 +1,5 @@
 ﻿div .hidden{
-    display:none;  
+	display:none;  
 }
 html {
   font-family: sans-serif;
@@ -3012,7 +3012,7 @@ hr {
 	width: 100%;
 	background: transparent;
 	color: #595F6E;
-    text-align:center;
+	text-align:center;
 }
 
 .input__label--hoshi {
