@@ -9,14 +9,18 @@
 <script src="~/Scripts/fileUploader.js"></script>
 
 @*in case no one notices... the h2 is hidden under the navbar. and the h4 is still generic text.*@
-<body onload="myFinisher()">
 
-    <div id="id01" class="modal" style="padding-top:0px;">
-        <form class="modal-content animate">
-            <div class="imgcontainer">
-                <span class="close" title="Home">
-                    <a href="/">
-                        @*<i class="fa fa-envira" style="font-size:25px; color:green;"></i>*@
+    <body onload="myFinisher()">
+
+        <div id="id01" class="modal" style="padding-top:0px;">
+            @*<form class="modal-content animate">*@
+@using (Html.BeginForm("Create", "EventTables", FormMethod.Post, new { @class = "modal-content animate" }))
+{
+    @Html.AntiForgeryToken()
+                <div class="imgcontainer">
+                    <span class="close" title="Home">
+                        <a href="/">
+                            @*<i class="fa fa-envira" style="font-size:25px; color:green;"></i>*@
                     </a>
                 </span>
                 <h3 style="color:forestgreen">Stemma<i class="fa fa-envira" style="font-size:25px; color:green;"></i></h3>
@@ -62,7 +66,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.EventCaption, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10" id="editForm">
-                        @Html.EditorFor(model => model.EventCaption, new { htmlAttributes = new { @class = "form-control", @style="height:200px"} })
+                        @Html.EditorFor(model => model.EventCaption, new { htmlAttributes = new { @class = "form-control", @style = "height:200px" } })
                         @Html.ValidationMessageFor(model => model.EventCaption, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -74,7 +78,7 @@
                     </div>
                     <!----This is where the Image is viewed through its ID---->
                     <div class="container-fluid">
-                        <div id="itemImg">
+                        <div id="itemImg" class="row text-center" >
                         </div>
                     </div>
                 </div>
@@ -86,17 +90,10 @@
                     <input class="btn btn-default" type="button" value="Upload" id="fileStack" onclick="upload()">
                 </div>
             </div>
-    </div>
-
-    @*anyone know how to make this input box bigger than the rest?*@
-
-    @*anyone know how to make this input box bigger than the rest?*@
-
-
-    </div>
-    </form>
+}
     </div>
 </body>
+
 <script>
     // Get the modal
     var modalForm = document.getElementById('#id01');
@@ -104,13 +101,6 @@
     function myFinisher() {
         $('#id01').fadeIn(4000);
     };
-        // Get the modal
-        var modalForm = document.getElementById('#id01');
-
-        function myFinisher() {
-            $('#id01').fadeIn(4000);
-        };
-
 </script>
 
 @*<hr />

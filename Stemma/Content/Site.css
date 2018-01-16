@@ -24,7 +24,7 @@ textarea {
 
 /*Start of CSS for timeline, if anything breaks reasearch below this line!*/
 
-/**,
+
 *::before,
 *::after {
   margin: 0;
@@ -38,11 +38,10 @@ body {
   color: #fff;
   overflow-x: hidden;
   padding-bottom: 50px;
-} INTRO SECTION
-–––––––––––––––––––––––––––––––––––––––––––––––––– 
+} 
 
 .intro {
-  /*background: #f45b69;
+  background: #f45b69;
   padding: 100px 0;
 }
 

@@ -1,4 +1,14 @@
 ﻿body {
+    height: 100%;
+    margin: 0;
+    /* The image used */
+    background-image: url('Images/Devions-60-photo-365638.jpg');
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 div#landing-Content{
     left:50%;
@@ -6,7 +16,7 @@ div#landing-Content{
     margin-top:-50px;
     margin-left:-50px;
     padding-top:0px;
-} 
+}
 .socialLoginList p{
     display:inline;
 }
@@ -22,11 +32,6 @@ div#landing-Content{
     letter-spacing: 0.12em;
     border-radius: 24px;
 }
-.form-control {
-    width: 80%;
-    margin-bottom: 10px;
-    padding-right: 10px;
-}
 h3{
     font-family: 'Allura', cursive;
     font-size: 54px;
@@ -37,8 +42,8 @@ h3{
 /* Center the image and position the close button */
 .imgcontainer {
     text-align: center;
+    margin: 24px 0 12px 0;
     position: relative;
-    padding-bottom: 10px;
 }
 
 img.avatar {
@@ -46,11 +51,9 @@ img.avatar {
     border-radius: 50%;}
 
 .container {
-    padding: 5px;
+    padding: 16px;
 }
-#itemImg{
-    margin-bottom: 10px;
-}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -69,11 +72,9 @@ img.avatar {
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 1% auto 1% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
-    height: 115%;
-    padding-top:20px;
 }
 
 /* The Close Button (x) */
@@ -118,3 +119,4 @@ img.avatar {
        width: 100%;
     }
 }
+
