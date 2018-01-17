@@ -16,10 +16,10 @@
             <div class="imgcontainer">
                 <span class="close" title="Home">
                     <a href="/">
-                        <i class="fa fa-envira" style="font-size:25px; color:green;"></i>
+                        @*<i class="fa fa-envira" style="font-size:25px; color:green;"></i>*@
                     </a>
                 </span>
-                <h3 style="color:forestgreen">Stemma</h3>
+                <h3 style="color:forestgreen">Stemma<i class="fa fa-envira" style="font-size:25px; color:green;"></i></h3>
             </div>
             <div class="container">
                 <div class="form-group">
@@ -59,68 +59,41 @@
                         @Html.ValidationMessageFor(model => model.PeopleInvolved, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-                @*anyone know how to make this input box bigger than the rest?*@
-
                 <div class="form-group">
                     @Html.LabelFor(model => model.EventCaption, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10" id="editForm">
-                        @Html.EditorFor(model => model.EventCaption, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.EventCaption, new { htmlAttributes = new { @class = "form-control", @style = "height:200px" } })
                         @Html.ValidationMessageFor(model => model.EventCaption, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            </div>
-                <div class="container">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.EventTitle, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.EventTitle, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.EventTitle, "", new { @class = "text-danger" })
-                        </div>
+                <hr />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UploadMedia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.HiddenFor(model => model.UploadMedia)
                     </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.EventYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.EventYear, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.EventYear, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.EventMonth, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.EventMonth, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.EventMonth, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.EventDay, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.EventDay, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.EventDay, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PeopleInvolved, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.PeopleInvolved, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.PeopleInvolved, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    @*anyone know how to make this input box bigger than the rest?*@
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.EventCaption, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10" id="editForm">
-                            @Html.EditorFor(model => model.EventCaption, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.EventCaption, "", new { @class = "text-danger" })
+                    <!----This is where the Image is viewed through its ID---->
+                    <div class="container-fluid">
+                        <div id="itemImg">
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                    <!--filestack Button-->
+                    <input class="btn btn-default" type="button" value="Upload" id="fileStack" onclick="upload()">
+                </div>
+            </div>
         </form>
     </div>
+
+
+
+    @*</div>
+        </form>
+        </div>*@
 </body>
 <script>
     // Get the modal
@@ -129,12 +102,11 @@
     function myFinisher() {
         $('#id01').fadeIn(4000);
     };
-        // Get the modal
-        var modalForm = document.getElementById('#id01');
-
-        function myFinisher() {
-            $('#id01').fadeIn(4000);
-        };
+    // Get the modal
+    var modalForm = document.getElementById('#id01');
+    function myFinisher() {
+        $('#id01').fadeIn(4000);
+    };
 
 </script>
 
@@ -145,7 +117,6 @@
         <div class="row">
             <div class="col-lg-4 form-horizontal">
                 <h4>EventTable</h4>
-
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                 <div class="form-group">
@@ -233,15 +204,15 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>*@
-@using (Html.BeginForm())
+
+@*@using (Html.BeginForm())*@
+
 {
-    @Html.AntiForgeryToken()
+    @*@Html.AntiForgeryToken()
     <div class="row">
         <div class="col-lg-4 form-horizontal">
             <h4>EventTable</h4>
-
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
             <div class="form-group">
                 @Html.LabelFor(model => model.EventTitle, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -262,99 +233,105 @@
                     @Html.EditorFor(model => model.EventMonth, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.EventMonth, "", new { @class = "text-danger" })
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.EventDay, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.EventDay, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EventDay, "", new { @class = "text-danger" })
+                }
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EventDay, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.EventDay, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EventDay, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.PeopleInvolved, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.PeopleInvolved, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.PeopleInvolved, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            </div>
-        </div>
-}
-            @*anyone know how to make this input box bigger than the rest?
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PeopleInvolved, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PeopleInvolved, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PeopleInvolved, "", new { @class = "text-danger" })
+                    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.EventCaption, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10" id="editForm">
-                    @Html.EditorFor(model => model.EventCaption, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EventCaption, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
-         <div class="col-lg-8">
-             <hr/>
-             <div class="form-group">
-                @Html.LabelFor(model => model.UploadMedia, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.HiddenFor(model => model.UploadMedia)
+        }
+
+    </div>*@
+
+
+    @*anyone know how to make this input box bigger than the rest?
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EventCaption, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10" id="editForm">
+                            @Html.EditorFor(model => model.EventCaption, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.EventCaption, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                 </div>
-                <!----This is where the Image is viewed through its ID---->
-                <div class="container-fluid">
-                    <div id="itemImg">
+                 <div class="col-lg-8">
+                     <hr/>
+                     <div class="form-group">
+                        @Html.LabelFor(model => model.UploadMedia, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.HiddenFor(model => model.UploadMedia)
+                        </div>
+                        <!----This is where the Image is viewed through its ID---->
+                        <div class="container-fluid">
+                            <div id="itemImg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                        <!--filestack Button-->
+                        <input class="btn btn-default" type="button" value="Upload" id="fileStack" onclick="upload()">
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-                <!--filestack Button-->
-                <input class="btn btn-default" type="button" value="Upload" id="fileStack" onclick="upload()">
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+
+                    <div class="text-center  col-md-offset-2 col-md-12">
+                        <input class="btn btn-default" type="BUTTON" value="Upload" id="fileStack" onclick="upload()">
+                    </div>
+                </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>*@
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+    <div id="navaay" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Stemma", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Timeline", "Index", "EventTables", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
-        </div>
-    </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-            
-            <div class="text-center  col-md-offset-2 col-md-12">
-                <input class="btn btn-default" type="BUTTON" value="Upload" id="fileStack" onclick="upload()">
-            </div>
-        </div> 
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>*@
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
-
-<div id="navaay" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("Stemma", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            @*@Html.ActionLink("Timeline", "Index", "EventTables", new { area = "" }, new { @class = "navbar-brand" })*@
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Timeline", "Index", "EventTables")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Timeline", "Index", "EventTables")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
                     @*<li>@Html.ActionLink("FAQ", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Get Started", "Contact", "Home")</li>*@
-                <li>@Html.ActionLink("Profile", "Create", "UserProfiles")</li>
-                <li>@Html.ActionLink("Create Event", "Create", "EventTables")</li>
-            </ul>
-            @Html.Partial("_LoginPartial")
+                        <li>@Html.ActionLink("Get Started", "Contact", "Home")</li>*@
+                    <li>@Html.ActionLink("Profile", "Create", "UserProfiles")</li>
+                    <li>@Html.ActionLink("Create Event", "Create", "EventTables")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>
     </div>
-</div>

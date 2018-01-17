@@ -4,16 +4,17 @@
     ViewBag.Title = "Login";
 }
 
-    <!--LoginStyleSheet-->
-    <link href="~/Content/RegisterStyle.css" rel="stylesheet" />
-    <link href="~/Content/LoginStyle.css" rel="stylesheet" />
-    
-    <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+<!--LoginStyleSheet-->
+<link href="~/Content/RegisterStyle.css" rel="stylesheet" />
+<link href="~/Content/LoginStyle.css" rel="stylesheet" />
+
+<!--Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body onload="myFinisher()">
 
     <div id="id01" class="modal" style="padding-top:0px;">
@@ -43,7 +44,7 @@
                 </span>
                 <div class="cta2">
                     <input type="submit" class="btn btn-default" value="Log in" />
-                    <a class="btn btn-success" href="/">
+                    <a class="btn btn-success" href="~/UserProfiles/Create">
                         <i class="fa fa-envira" style="font-size:15px"></i> Home
                     </a>
                 </div>
@@ -118,8 +119,6 @@
                 }
             </section>
         </div>*@
-
-
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
