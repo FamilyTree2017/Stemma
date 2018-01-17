@@ -1,24 +1,29 @@
 ﻿@import url('fonawesomecss.css');
 @import url('LeafStyles.css');
 
-body, html {
-    background-image: url('../Content/Images/pexels-photo-365638.jpeg');
+body {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0 0.5) ,rgba(200,200,175,0.8) ), url('Images/pexels-photo-365638.jpeg');
     margin: 0px;
     background-size: cover;
 
 }
-.detailsHeading {
-    padding: 0 30px 0 30px;
-    font-size: 120%;
-    margin-top: 30px;
-    color: rgba(50,0,55,.9);
-    font-weight: bold;
-
-}
 
 .detailsHeading h1{
-    font-size: 130%;
-    margin-bottom: -15px;
+    color: rgb(88,15,60);
+    text-align: left;
+    font-size: 40px;
+    margin-top:80px;
+    margin-left: 50px;
+    margin-bottom:0px
+}
+
+.detailsHeading h3{
+    color: rgb(80,73,62);
+    text-align: left;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 10px;
+    padding-bottom: 20px;
 }
 
 .rowDetails{
@@ -30,7 +35,7 @@ body, html {
         /*fixed height remains even when you shrink the screen. button covers text.*/
         padding: 15px;
         text-align: left;
-        background-color: rgb(36, 79, 25); /*rgba(23, 156, 46, 0.7);*/
+        background-color: rgba(36, 79, 25, .8); /*rgba(23, 156, 46, 0.7);*/
         color: lightgray; /*rgb(232, 255, 136);*/ /*rgb(80,73,62);*/
         border: none;
         /*border-width: 13px 20px 13px 0;

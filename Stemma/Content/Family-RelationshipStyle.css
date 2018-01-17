@@ -25,3 +25,16 @@
 .Profile{
     margin-bottom: 60px;
 }
+h4 {
+    color: rgb(80,73,62);
+    text-align: left;
+    font-size: 20px;
+    margin-left: 50px;
+}
+h2 {
+    color: rgb(88,15,60);
+    text-align: left;
+    font-size: 40px;
+    margin-top:50px;
+    margin-left: 50px;
+}
