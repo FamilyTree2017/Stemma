@@ -4,12 +4,8 @@
 @*<h3>@ViewBag.Message</h3>*@
 
 <div class="jumbotron">
-    <h2>@ViewBag.Title</h2>
-        <p>Overwhelmed by gigs of data from capturing every special moment? 
-        Or do you forget to take photos and commemorate major life events? 
-        Want to share stories of your life and leave advice for future generations, but don't know how? 
-        Our guided system will help you build a profile and create a curated timeline you can slowly build overtime, 
-        little by little and bit by byte. Capturing the moments, people, places, and everything in between that makes 
+    <h2>Meet The Stemma Team</h2>
+        <p>Capturing the moments, people, places, and everything in between that makes 
         your life special is made easy with Stemma.</p>
 </div>
 
@@ -48,7 +44,7 @@
                         <a href="https://www.linkedin.com/in/gabriellesudik/">Gabrielle Sudik</a>
                     </h4>
                     <p>
-                        I want a career that forces me to change as the world around me changes, and software development gives me the perfect opportunity! And I'll still get to use the soft skills I developed in my previous profession: teamwork, leadership, communication, planning, organization, consulting, and delivering a product to clients.
+                        I want a career that forces me to change as the world around me changes, and software development gives me the perfect opportunity! I can use the soft skills I developed in my previous profession: teamwork, leadership, communication, planning, organization, consulting, and delivering a product to clients.
                     </p>
                     </div>
                 </div>
@@ -224,22 +220,15 @@
                 <span class="icon-bar"></span>
             </button>
             @Html.ActionLink("Stemma", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-
-            @*@Html.ActionLink("Timeline", "Index", "EventTables", new { area = "" }, new { @class = "navbar-brand" })*@
-
-            @Html.ActionLink("Your Timeline", "Index", "EventTables", new { area = "" }, new { @class = "navbar-brand" })
-
+            @*@Html.ActionLink("Your Timeline", "Index", "EventTables", new { area = "" }, new { @class = "navbar-brand" })*@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Timeline","Index","EventTables")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-
-                @*<li>@Html.ActionLink("FAQ", "Contact", "Home")</li>*@
-                @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                <li>@Html.ActionLink("Profile", "Create", "UserProfiles")</li>
+                <li>@Html.ActionLink("Your Timeline", "Index", "EventTables")</li>
                 <li>@Html.ActionLink("Your Profile", "Create", "UserProfiles")</li>
                 <li>@Html.ActionLink("Create Event", "Create", "EventTables")</li>
+
+                <li>@Html.ActionLink("About", "About", "Home")</li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

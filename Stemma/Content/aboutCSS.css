@@ -1,7 +1,7 @@
 ﻿body {
     /*background-image: url('Images/pexels-photo-365638.jpeg');*/
     background-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgba(200,200,175,0.2) 0%), url('Images/pexels-photo-365638.jpeg');
-    background-size:cover;
+    background-size: cover;
     background-repeat: repeat;
     margin-top: 10px;
 }
@@ -11,16 +11,18 @@
     background-color: rgba(230,230,230, 0.8);
     border: 1px solid rgb(118, 15, 30);
     box-shadow: 5px 5px 70px rgb(128,15,60);
-    background: linear-gradient( rgba(255,255, 255,.6), rgba(255, 255,255,.6), rgba(255, 255, 255,.6));
-    margin: 15px;
-    padding: 15px;
-    height: 450px;
+    background: linear-gradient( rgba(255,255, 255,.6), rgba(255, 255,255,.8), rgba(255, 255, 255, 1.0));
+    margin: 10px;
+    padding: 10px;
+    height: 390px;
     border-radius:4%;
 }
 .myBtn {
 }
 .box h4 {
     text-align: center;
+    margin-bottom: -15px;
+    margin-top: -15px;
 }
 .box p {
     text-align: justify;
@@ -184,25 +186,25 @@ a:hover {
     background-color: rgb(230,230,230);
     border: 1px solid rgb(118, 15, 30);
     box-shadow: 5px 5px 70px rgb(128,15,60);
-    background: linear-gradient( rgba(195, 255, 5,.8), rgba(255, 255, 255,.8), rgba(255, 215, 105,.6));
+    background: linear-gradient( rgba(195, 200, 5,.8), rgba(255, 255, 255,.8), rgba(255, 215, 105,.6));
     margin-top: 75px;
     margin-left: 75px;
     margin-right: 75px;
 }
 .jumbotron h2 {
     line-height: .6;
-    padding:4vh 0;
+    margin-top: 0px;
     font-family: Allura;
-    font-size: 15rem;
+    font-size: 100px;
     color: rgb(88,15,60);
     text-shadow: 1px 1px 1px rgba(225,255,125,.6);
 }
 .jumbotron p {
-    padding-left: 80px;
-    padding-right: 40px;
+    padding-left: 70px;
+    padding-right: 10px;
     margin: 0;
     line-height: 1.5;
     color: rgb(80,73,62);
-    font-size: 28px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 400;
 }

@@ -5,6 +5,24 @@
     background-repeat: repeat;
     margin-top: 10px;
 }
+.box {
+    color:  rgba(128,15,60, 0.8);
+    text-align: justify;
+    background-color: rgba(230,230,230, 0.8);
+    border: 1px solid rgb(118, 15, 30);
+    box-shadow: 5px 5px 70px rgb(128,15,60);
+    background: linear-gradient( rgba(255,255, 255,.6), rgba(255, 255,255,.8), rgba(255, 255, 255, 1.0));
+    margin: 10px;
+    padding: 10px;
+    height: 420px;
+    border-radius:4%;
+}
+.box h4 {
+    text-align: center;
+    margin: 1px;
+    padding: 0;
+    font-size: 25px;
+}
 .custom-icon {
   background: #666;
   background: rgba(0, 128, 0, 0.8);
@@ -38,13 +56,13 @@ p {
 h4 {
     color: rgb(80,73,62);
     text-align: left;
-    font-size: 25px;
+    font-size: 20px;
     margin-left: 50px;
 }
 h2 {
     color: rgb(88,15,60);
     text-align: left;
-    font-size: 50px;
+    font-size: 40px;
     margin-top:50px;
     margin-left: 50px;
 }

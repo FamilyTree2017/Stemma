@@ -329,6 +329,7 @@
     <Content Include="Content\LeafStyles.css" />
     <Content Include="Content\LoginStyle.css" />
     <Content Include="Content\RegisterStyle.css" />
+    <Content Include="Content\TimeLine.css" />
     <Content Include="Content\UserProfileCreate.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
