@@ -17,7 +17,6 @@ namespace Stemma.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EventTable()
         {
-            this.Media = new HashSet<Medium>();
             this.UserProfiles = new HashSet<UserProfile>();
         }
     
@@ -31,8 +30,6 @@ namespace Stemma.Models
         public string EventCaption { get; set; }
         public string UploadMedia { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Medium> Media { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserProfile> UserProfiles { get; set; }
     }

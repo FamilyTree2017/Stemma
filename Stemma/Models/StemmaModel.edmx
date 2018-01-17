@@ -9,7 +9,6 @@
     <EntitySet Name="Careers" EntityType="STEMMAModel.Store.Careers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Celebrations" EntityType="STEMMAModel.Store.Celebrations" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="HobbyTables" EntityType="STEMMAModel.Store.HobbyTables" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Media" EntityType="STEMMAModel.Store.Media" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Memories" EntityType="STEMMAModel.Store.Memories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="WorldEvents" EntityType="STEMMAModel.Store.WorldEvents" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Relationships" EntityType="STEMMAModel.Store.Relationships" store:Type="Tables" Schema="dbo" />
@@ -22,10 +21,6 @@
     <EntitySet Name="AspNetUsers" EntityType="STEMMAModel.Store.AspNetUsers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RegisterUsers" EntityType="STEMMAModel.Store.RegisterUsers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AspNetUserRoles" EntityType="STEMMAModel.Store.AspNetUserRoles" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_Media_EventTable" Association="STEMMAModel.Store.FK_Media_EventTable">
-      <End Role="EventTable" EntitySet="EventTables" />
-      <End Role="Medium" EntitySet="Media" />
-    </AssociationSet>
     <AssociationSet Name="FK_UserProfile_Career" Association="STEMMAModel.Store.FK_UserProfile_Career">
       <End Role="Career" EntitySet="Careers" />
       <End Role="UserProfile" EntitySet="UserProfiles" />
@@ -143,14 +138,6 @@
     <Property Name="FamilyVacation" Type="bit" Nullable="true" />
     <Property Name="ChildhoodVacation" Type="bit" Nullable="true" />
     <Property Name="AnythingElse" Type="bit" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Media">
-    <Key>
-      <PropertyRef Name="MediaID" />
-    </Key>
-    <Property Name="MediaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FilePath" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="EventID" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="Memories">
     <Key>
@@ -315,18 +302,6 @@
     <Property Name="AspNetRoles_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
     <Property Name="AspNetUsers_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
   </EntityType>
-  <Association Name="FK_Media_EventTable">
-    <End Role="EventTable" Type="STEMMAModel.Store.EventTables" Multiplicity="0..1" />
-    <End Role="Medium" Type="STEMMAModel.Store.Media" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EventTable">
-        <PropertyRef Name="EventID" />
-      </Principal>
-      <Dependent Role="Medium">
-        <PropertyRef Name="EventID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_UserProfile_Career">
     <End Role="Career" Type="STEMMAModel.Store.Careers" Multiplicity="1" />
     <End Role="UserProfile" Type="STEMMAModel.Store.UserProfiles" Multiplicity="*" />
@@ -543,15 +518,6 @@
           <Property Name="AnythingElse" Type="Boolean" />
           <NavigationProperty Name="UserProfiles" Relationship="STEMMAModel.FK_UserProfile_HobbyTable" FromRole="HobbyTable" ToRole="UserProfile" />
         </EntityType>
-        <EntityType Name="Medium">
-          <Key>
-            <PropertyRef Name="MediaID" />
-          </Key>
-          <Property Name="MediaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="EventID" Type="Int32" />
-          <NavigationProperty Name="EventTable" Relationship="STEMMAModel.FK_Media_EventTable" FromRole="Medium" ToRole="EventTable" />
-        </EntityType>
         <EntityType Name="Memory">
           <Key>
             <PropertyRef Name="MemoryID" />
@@ -605,15 +571,10 @@
           <EntitySet Name="Careers" EntityType="Self.Career" />
           <EntitySet Name="Celebrations" EntityType="Self.Celebration" />
           <EntitySet Name="HobbyTables" EntityType="Self.HobbyTable" />
-          <EntitySet Name="Media" EntityType="Self.Medium" />
           <EntitySet Name="Memories" EntityType="Self.Memory" />
           <EntitySet Name="WorldEvents" EntityType="Self.WorldEvent" />
           <EntitySet Name="Relationships" EntityType="STEMMAModel.Relationship" />
           <EntitySet Name="EventTables" EntityType="STEMMAModel.EventTable" />
-          <AssociationSet Name="FK_Media_EventTable" Association="STEMMAModel.FK_Media_EventTable">
-            <End Role="EventTable" EntitySet="EventTables" />
-            <End Role="Medium" EntitySet="Media" />
-          </AssociationSet>
           <EntitySet Name="UserProfiles" EntityType="STEMMAModel.UserProfile" />
           <AssociationSet Name="FK_UserProfile_Career" Association="STEMMAModel.FK_UserProfile_Career">
             <End Role="Career" EntitySet="Careers" />
@@ -694,22 +655,9 @@
           <Property Name="EventYear" Type="Int32" Nullable="false" />
           <Property Name="PeopleInvolved" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="EventCaption" Type="String" MaxLength="750" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Media" Relationship="STEMMAModel.FK_Media_EventTable" FromRole="EventTable" ToRole="Medium" />
           <NavigationProperty Name="UserProfiles" Relationship="STEMMAModel.FK_UserProfile_EventTable" FromRole="EventTable" ToRole="UserProfile" />
           <Property Name="UploadMedia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <Association Name="FK_Media_EventTable">
-          <End Type="STEMMAModel.EventTable" Role="EventTable" Multiplicity="0..1" />
-          <End Type="STEMMAModel.Medium" Role="Medium" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EventTable">
-              <PropertyRef Name="EventID" />
-            </Principal>
-            <Dependent Role="Medium">
-              <PropertyRef Name="EventID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="UserProfile">
           <Key>
             <PropertyRef Name="UserProfileID" />
@@ -993,15 +941,6 @@
           <ScalarProperty Name="FamilyVacation" ColumnName="FamilyVacation" />
           <ScalarProperty Name="ChildhoodVacation" ColumnName="ChildhoodVacation" />
           <ScalarProperty Name="AnythingElse" ColumnName="AnythingElse" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Media">
-      <EntityTypeMapping TypeName="IsTypeOf(STEMMAModel.Medium)">
-        <MappingFragment StoreEntitySet="Media">
-          <ScalarProperty Name="MediaID" ColumnName="MediaID" />
-          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-          <ScalarProperty Name="EventID" ColumnName="EventID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

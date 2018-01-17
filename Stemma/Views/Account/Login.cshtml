@@ -17,50 +17,53 @@
 <body onload="myFinisher()">
 
     <div id="id01" class="modal" style="padding-top:0px;">
-        <form class="modal-content animate">
-            <div class="imgcontainer">
-                <span class="close" title="Home"><a href="/">
-                 <i class="fa fa-envira" style="font-size:25px; color:green;"></i>
-                </a></span>
-                <h3 style="color:forestgreen">Stemma</h3>
-            </div>
-@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
-{
-    @Html.AntiForgeryToken()
-            @Html.ValidationSummary("", new { @class = "text-danger" })
-            <div class="container">
-                <span class="input input--hoshi">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "input__field input__field--hoshi" })
-                    <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="Email">
-                        <span class="input__label-content input__label-content--hoshi">E-mail</span>
-                    </label>
-                </span>
-                <span class="input input--hoshi">
-                    @Html.PasswordFor(m => m.Password, new { @class = "input__field input__field--hoshi" })
-                    <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="Password">
-                        <span class="input__label-content input__label-content--hoshi">Password</span>
-                    </label>
-                </span>
-                <div class="cta2">
-                    <input type="submit" class="btn btn-default" value="Log in" />
-                    <a class="btn btn-success" href="/">
-                        <i class="fa fa-envira" style="font-size:15px"></i> Home
-                    </a>
+        <div class="modal-content animate">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="imgcontainer">
+                    <span class="close" title="Home">
+                        <a href="/">
+                            <i class="fa fa-envira" style="font-size:25px; color:green;"></i>
+                        </a>
+                    </span>
+                    <h3 style="color:forestgreen">Stemma</h3>
                 </div>
-                <label>
-                    @Html.CheckBoxFor(m => m.RememberMe)
-                    @Html.LabelFor(m => m.RememberMe)
-                </label>            
-                    <div class="col-md-12">
-                        <section id="socialLoginForm">
-                            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                        </section>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="container">
+                    <span class="input input--hoshi">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "input__field input__field--hoshi" })
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="Email">
+                            <span class="input__label-content input__label-content--hoshi">E-mail</span>
+                        </label>
+                    </span>
+                    <span class="input input--hoshi">
+                        @Html.PasswordFor(m => m.Password, new { @class = "input__field input__field--hoshi" })
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="Password">
+                            <span class="input__label-content input__label-content--hoshi">Password</span>
+                        </label>
+                    </span>
+                    <div class="cta2">
+                        <input type="submit" class="btn btn-default" value="Log in" />
+                        <a class="btn btn-success" href="/">
+                            <i class="fa fa-envira" style="font-size:15px"></i> Home
+                        </a>
                     </div>
+                    <label>
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </label>
+                </div>
+            }
+            <div class="col-md-12">
+                <section id="socialLoginForm">
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                </section>
+                <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
-}
-        </form>
+        </div>
     </div>
+         
 </body>
 <script>
         // Get the modal

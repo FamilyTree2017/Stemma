@@ -12,7 +12,9 @@
 <body onload="myFinisher()">
 
     <div id="id01" class="modal" style="padding-top:0px;">
-        <form class="modal-content animate">
+       @using (Html.BeginForm("Create", "EventTables", FormMethod.Post, new { @class = "modal-content animate" }))
+            {
+        @Html.AntiForgeryToken()
             <div class="imgcontainer">
                 <span class="close" title="Home">
                     <a href="/">
@@ -21,6 +23,9 @@
                 </span>
                 <h3 style="color:forestgreen">Stemma</h3>
             </div>
+           
+               
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="container">
                     <div class="form-group">
                         @Html.LabelFor(model => model.EventTitle, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -70,9 +75,31 @@
                         </div>
                     </div>
                 </div>
-        </form>
-    </div>
-</body>
+                <div class="col-lg-8">
+                    <hr />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UploadMedia, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.HiddenFor(model => model.UploadMedia)
+                        </div>
+                        <!----This is where the Image is viewed through its ID---->
+                        <div class="container-fluid">
+                            <div id="itemImg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                        <!--filestack Button-->
+                        <input class="btn btn-default" type="button" value="Upload" id="fileStack" onclick="upload()">
+                    </div>
+                </div>
+            }
+            </div>
+
+        </body>
 <script>
         // Get the modal
         var modalForm = document.getElementById('#id01');
@@ -206,21 +233,4 @@
         </div>
     </div>
 </div>
-<div id="navaay"class="navbar navbar-inverse navbar-fixed-bottom">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("FAQ", "Contact", "Home")</li>
-            </ul>
 
-        </div>
-    </div>
-</div>

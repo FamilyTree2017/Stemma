@@ -28,7 +28,6 @@ namespace Stemma.Models
         public virtual DbSet<Career> Careers { get; set; }
         public virtual DbSet<Celebration> Celebrations { get; set; }
         public virtual DbSet<HobbyTable> HobbyTables { get; set; }
-        public virtual DbSet<Medium> Media { get; set; }
         public virtual DbSet<Memory> Memories { get; set; }
         public virtual DbSet<WorldEvent> WorldEvents { get; set; }
         public virtual DbSet<Relationship> Relationships { get; set; }

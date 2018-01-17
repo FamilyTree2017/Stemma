@@ -224,7 +224,6 @@
     <Compile Include="Controllers\HobbyTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MediaController.cs" />
     <Compile Include="Controllers\MemoriesController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
     <Compile Include="Controllers\UserProfilesController.cs" />
@@ -262,9 +261,6 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Medium.cs">
-      <DependentUpon>StemmaModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Memory.cs">
       <DependentUpon>StemmaModel.tt</DependentUpon>
     </Compile>
