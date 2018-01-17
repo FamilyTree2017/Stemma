@@ -51,7 +51,7 @@
     margin-top: 5px;
 }
 .custom-icon-gabrielle {
-    background-image: url('Images/gablookssomber.jpg');
+    background-image: url('Images/gabriellesudik_crop (2).jpg');
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 100%;
@@ -89,7 +89,7 @@
 .custom-icon-holly {
     background-image: url('Images/hollylittle.jpg');
     border-radius: 100%;
-    border: 3px solid rgb(118, 15, 30);;
+    border: 3px solid rgb(118, 15, 30);
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46);
     color: #fff;
     display: table-cell;
