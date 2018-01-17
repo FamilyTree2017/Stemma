@@ -1,0 +1,201 @@
+﻿/******************* TIMELINE ******************/
+body {
+    /*background-image: url('Images/pexels-photo-365638.jpeg');*/
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgba(200,200,175,0.2) 0%), url('Images/pexels-photo-365638.jpeg');
+    background-size: cover;
+    background-repeat: repeat;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    height: 100%;
+    margin: 0;
+    /* The image used */
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+ 
+}
+/*.leaf-landing-page {
+    background-image: url('Devions-60-photo-365638.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+}*/
+#leaf-timeline-page {
+    /*background-image: url('Large-Devions-photo-365638.jpg');*/
+    background-repeat: repeat;
+    font-size: 2rem;
+    color: rgb(240, 240, 255);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.intro {
+    padding: 9vh 0 0 0;
+    color: rgb(252,255,220);
+}
+
+/*TIMELINE BACKGROUND*/
+.timeline {
+    background: linear-gradient(rgba(195, 200, 5,.3), rgba(110, 205, 55,.2), rgba(218,255,107,.4), rgba(255, 255, 255,.6),rgba(195, 255, 5,.7), rgba(218,255,107,.5),rgba(255, 215, 105,.6));
+    border-radius: 7px;
+    margin: 20px;
+    box-shadow: 0 0 55px 1px rgb(0,70,0);
+}
+
+    .timeline ul {
+        padding: 30px;
+    }
+    /*THE LINE IN THE TIMELINE*/
+        .timeline ul li {
+            list-style-type: none;
+            position: relative;
+            width: 6px;
+            margin: 0 auto;
+            padding-top: 0px;
+            background-color: rgb(232,255,186);
+        }
+
+            .timeline ul li::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: inherit;
+            }
+            /*TIMELINE EVENT CARDS*/
+            .timeline ul li div {
+                align-items: center;
+                position: relative;
+                bottom: 0;
+                width: 40VW;
+                padding: 15px;
+                background-color: rgba(230,230,230, 0.8);
+                border: 1px solid rgb(118, 15, 30);
+                box-shadow: 5px 5px 70px rgb(128,15,60);
+                background: linear-gradient( rgba(255,255, 255,.6), rgba(255, 255,255,.8), rgba(255, 255, 255, 1.0));
+                border-radius: 3%;
+                color: rgb(100, 100, 100)
+            }
+
+                .timeline ul li div::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 6px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                }
+/**************************RIGHT SIDE CARDS*******************/
+            .timeline ul li:nth-child(odd) div {
+                left: 40px;
+            }
+/**************************RIGHT SIDE POINTERS*******************/
+                .timeline ul li:nth-child(odd) div::before {
+                    left: -22px;
+                    border-width: 15px 25px 15px 0;
+                    border-color: transparent rgba(30,0,65,1) transparent transparent;
+                    
+                }
+/**************************LEFT SIDE CARDS*******************/
+            .timeline ul li:nth-child(even) div {
+                left: -720px;
+            }
+            /**************************LEFT SIDE POINTERS*******************/
+                .timeline ul li:nth-child(even) div::before {
+                    right: -21px;
+                    border-width: 15px 0 15px 25px;
+                    border-color: transparent transparent transparent rgba(30,0,65,1);
+                }
+
+time {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: rgb(100, 100, 100);
+}
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+    border: 1px solid rgb(170,70,95);
+    background: radial-gradient(circle, rgb(255,126,55), rgb(244,70,95), rgb(230,40,65));
+    box-shadow: 5px 5px 50px 0px rgba(0,70,0,.3);
+
+}
+
+.timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+.timeline img {
+    border-radius: 5%;
+    width: 99%;
+}
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+    .timeline ul li div {
+        width: 250px;
+    }
+
+    .timeline ul li:nth-child(even) div {
+        left: -289px;
+        /*250+45-6*/
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .timeline ul li {
+        margin-left: 20px;
+    }
+
+        .timeline ul li div {
+            width: calc(100vw - 91px);
+        }
+
+        .timeline ul li:nth-child(even) div {
+            left: 45px;
+        }
+
+            .timeline ul li:nth-child(even) div::before {
+                left: -15px;
+                border-width: 14px 21px 14px 0;
+                border-color: transparent rgba(60,0,25,.9) transparent transparent;
+            }
+}

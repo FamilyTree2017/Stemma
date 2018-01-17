@@ -5,8 +5,7 @@
 }
 <script src="https://static.filestackapi.com/v3/filestack.js"></script>
 <script src="~/Scripts/fileUploader.js"></script>
-<link href="~/Content/LeafStyles.css" rel="stylesheet" />
-
+<link href="~/Content/TimeLine.css" rel="stylesheet" />
 <h2>Your Stemma Timeline</h2>
 
 <section class="timeline">
@@ -82,14 +81,14 @@
                 <span class="icon-bar"></span>
             </button>
             @*@Html.ActionLink("Stemma", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            @Html.ActionLink("Timeline", "Index", "EventTables", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Your Timeline", "Index", "EventTables", new { area = "" }, new { @class = "navbar-brand" })
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 @*<li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("FAQ", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Get Started", "Contact", "Home")</li>*@
-                <li>@Html.ActionLink("Profile", "Create", "UserProfiles")</li>
+                <li>@Html.ActionLink("Your Profile", "Create", "UserProfiles")</li>
                 <li>@Html.ActionLink("Create Event", "Create", "EventTables")</li>
             </ul>
             @Html.Partial("_LoginPartial")
