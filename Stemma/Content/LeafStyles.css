@@ -175,7 +175,7 @@ h5 {
                 }
 /**************************RIGHT SIDE CARDS*******************/
             .timeline ul li:nth-child(odd) div {
-                left: 73px;
+                left: 40px;
             }
 /**************************RIGHT SIDE POINTERS*******************/
                 .timeline ul li:nth-child(odd) div::before {
@@ -186,7 +186,7 @@ h5 {
                 }
 /**************************LEFT SIDE CARDS*******************/
             .timeline ul li:nth-child(even) div {
-                left: -570px;
+                left: -720px;
             }
             /**************************LEFT SIDE POINTERS*******************/
                 .timeline ul li:nth-child(even) div::before {

@@ -17,7 +17,11 @@
 <body onload="myFinisher()">
 
     <div id="id01" class="modal" style="padding-top:0px;">
-        <form class="modal-content animate">
+        <div class="modal-content animate">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
             <div class="imgcontainer">
                 <span class="close" title="Home">
                     <a href="/">
@@ -25,11 +29,7 @@
                     </a>
                 </span>
                 <h3 style="color:forestgreen">Stemma</h3>
-            </div>
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary("", new { @class = "text-danger" })
+            </div>        
                 <div class="container">
                     <span class="input input--hoshi">
                         @Html.TextBoxFor(m => m.Email, new { @class = "input__field input__field--hoshi" })
@@ -53,15 +53,15 @@
                         @Html.CheckBoxFor(m => m.RememberMe)
                         @Html.LabelFor(m => m.RememberMe)
                     </label>
-                    <div class="col-md-12">
-                        <section id="socialLoginForm">
-                            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                        </section>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
-                    </div>
                 </div>
             }
-        </form>
+            <div>
+                <section id="socialLoginForm">
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                </section>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </div>
     </div>
 </body>
 <script>
