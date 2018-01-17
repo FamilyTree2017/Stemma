@@ -1,11 +1,15 @@
 ﻿body {
+    font-family:'font-awesome';
 }
 
 #navaay{
     background-color:#006400;
     /*padding-bottom:-20px;
     margin-bottom:-20px;*/
-    font-family:'fon-awesome';
+    font-family:'font-awesome';
+    font-size:20px;
+    margin-right:0px;
+    padding-right:10px;
 }
 /*.detailsHeading{
     margin-top:20px;

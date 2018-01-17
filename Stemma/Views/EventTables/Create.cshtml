@@ -233,7 +233,7 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>*@
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -279,7 +279,9 @@
                     @Html.ValidationMessageFor(model => model.PeopleInvolved, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            </div>
+        </div>
+}
             @*anyone know how to make this input box bigger than the rest?
 
             <div class="form-group">
