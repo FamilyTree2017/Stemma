@@ -1,63 +1,56 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Stemma</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!--Google Font API link-->
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Allura:300,400,500,600,700%Roboto:%7%Pacifico:100,300,400,500">
-    
-</head>
-<body>
+﻿
+
+
         <!-- LANDING JUMBOTRON -->
-        <div class="container-fluid">
             <div class="jumbotron">
-                <h1 class="logo">Stemma</h1>
+                <h1>Stemma</h1>
                 <h2>
                     Capturing the moments, people, places, and everything in between that makes your life special is made easy with Stemma.
                 </h2>
                 <div class="cta">
-                    <a class="btn btn-success" href="~/Views/Account/Register.cshtml"> <i class="fa fa-envira" style="font-size: 15px"></i>Get started</a>
+                    <a class="btn btn-success" href="/Account/Register"> <i class="fa fa-envira" style="font-size: 15px"></i>Get started</a>
                 </div>
             </div>
-        </div>
-        <!-- LANDING INTROS -->
-        <div class="container" id="landing-page-text-boxes">
-            <div class="box col-md-3">
-                <div class="textbox">
-                    <h2>The little things...</h2>
-                    <p>
-                        How do you capture life's little everyday moments?
-                        Do you need reminded to take a picture with a friend or family member?
-                        Do you want to record a story or a song?
-                        Never forget a moment with the help of Stemma.
-                    </p>
-                </div>
-            </div>
-            <div class="box col-md-3">
-                <div class="textbox">
-                    <h2>The big things...</h2>
-                    <p>Record all of those major life-changing moments - weddings, graduations, births, a new job, and buying a house - what changed in your life and what changed you. Keep track of it all with Stemma.</p>
-                </div>
-            </div>
-            <div class="box col-md-3">
-                <div class="textbox">
-                    <h2>What came before...</h2>
-                    <p>Begin to archive your family history. Upload pictures, create events, record a family history, and organize it in one place with the help of Stemma.</p>
-                </div>
-            </div>
-            <div class="box col-md-3">
-                <div class="textbox">
-                    <h2>...and what is yet to come.</h2>
-                    <p>Leave life lessons, stories, and memories for future generations. Preserve your history for your loved ones with the help of Stemma.</p>
 
-                </div>
+<body>
+    <!-- LANDING INTROS -->
+        <div class="box col-md-3">
+            <h2>The little things...</h2>
+            <p>
+                How do you capture life's little everyday moments?
+                Do you need reminded to take a picture with a friend or family member?
+                Do you want to record a story or a song?
+                Never forget a moment with the help of Stemma.
+            </p>
+            <div class="cta-box">
+                <a class="btn btn-success" href="/Account/Register"> <i class="fa fa-envira" style="font-size: 15px"></i>Get started</a>
             </div>
         </div>
+        <div class="box col-md-3">
+            <h2>The big things...</h2>
+            <p>Record all of those major moments - weddings, graduations, births, a new job, and buying a house. What changed in your life, what changed you, and how do you remember it? Keep track of your life with Stemma.</p>
+            <div class="cta-box">
+                <a class="btn btn-success" href="/Account/Register"> <i class="fa fa-envira" style="font-size: 15px"></i>Get started</a>
+            </div>
+        </div>
+        <div class="box col-md-3">
+            <h2>What came before...</h2>
+            <p>Easily archive your family history. Upload pictures, create events, and record your stories with the help of our guided questions. Have everything organized, curated, and easily accessed in one place with of Stemma.</p>
+            <div class="cta-box">
+                <a class="btn btn-success" href="/Account/Register"> <i class="fa fa-envira" style="font-size: 15px"></i>Get started</a>
+            </div>
+        </div>
+        <div class="box col-md-3">
+            <h2>...and what is yet to come.</h2>
+            <p>Leave life lessons, stories, and memories via pictures, audio, and video, for future generations. Preserve your history, stories, and perspective for your loved ones with the help of Stemma.</p>
+            <div class="cta-box">
+                <a class="btn btn-success" href="/Account/Register"> <i class="fa fa-envira" style="font-size: 15px"></i>Get started</a>
+            </div>
+        </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Stemma</p>
+    </footer>
+</body>
     <!-- /container -->
     <!-- Scripts
     ================================================== -->
@@ -75,9 +68,13 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-</body>>
-</html>
-       @*Put navbar onto media page and make the timeline go to the index of the event table*@
+    <title>Stemma</title>
+    <!--Google Font API link-->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Allura:300,400,500,600,700%Roboto:%7%Pacifico:100,300,400,500">
+<link href="~/Content/LeafStyles.css" rel="stylesheet" />
+
+    @*Put navbar onto media page and make the timeline go to the index of the event table*@
     <div id="navaay" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -104,6 +101,4 @@
             </div>
         </div>
     </div>
-    <footer>
-        <p>&copy; @DateTime.Now.Year - Stemma</p>
-    </footer>
+    
